@@ -1,4 +1,4 @@
-# telescope-snippets.nvim
+# telescope-ultisnips.nvim
 
 Integration for [ultisnips.nvim](https://github.com/SirVer/ultisnips) with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
 
