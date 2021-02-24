@@ -17,10 +17,10 @@ local ultisnips = function(opts)
   opts = opts or {}
   local objs = {}
 
-  if vim.fn.exists('*UltiSnips#SnippetsInCurrentScope') == 0 then 
-    print('telescope-ultisnips.nvim: no snippets available in empty buffer')
-    return
-  end
+  -- if vim.fn.exists('*UltiSnips#SnippetsInCurrentScope') == 0 then 
+  --   print('telescope-ultisnips.nvim: no snippets available in empty buffer')
+  --   return
+  -- end
 
   vim.call('UltiSnips#SnippetsInCurrentScope', 1)
   local snippetsList = vim.g.current_ulti_dict_info
