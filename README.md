@@ -5,7 +5,7 @@ Integration for [ultisnips.nvim](https://github.com/SirVer/ultisnips) with [tele
 
 ## Requirements
 
-- [snippets.nvim](https://github.com/SirVer/ultisnips) (required)
+- [ultisnips.nvim](https://github.com/SirVer/ultisnips) (required)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (required)
 
 ## Setup
