@@ -3,10 +3,7 @@ if not has_telescope then
   error('This plugins requires nvim-telescope/telescope.nvim')
 end
 
--- TODO: breaks load, fix later
--- if vim.fn.exists('did_plugin_ultisnips') ~= 1 then
---   error('This plugin requires SirVer/Ultisnips')
--- end
+
 
 local actions = require('telescope.actions')
 local action_state = require('telescope.actions.state')
@@ -20,7 +17,11 @@ local ultisnips = function(opts)
   opts = opts or {}
   local objs = {}
 
-  if vim.fn.exists('*UltiSnips#SnippetsInCurrentScope') == 0 then error('This plugin requires SirVer/Ultisnips') end
+  if vim.fn.exists('*UltiSnips#SnippetsInCurrentScope') == 0 then 
+    print('telescope-ultisnips.nvim: no snippets available in empty buffer')
+    return
+  end
+
   vim.call('UltiSnips#SnippetsInCurrentScope', 1)
   local snippetsList = vim.g.current_ulti_dict_info
 
