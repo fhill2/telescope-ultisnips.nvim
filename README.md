@@ -2,6 +2,7 @@
 
 Integration for [ultisnips.nvim](https://github.com/SirVer/ultisnips) with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
 
+![telescope-ultisnips](https://user-images.githubusercontent.com/16906982/109088570-7f84a880-76c4-11eb-99f4-223f3198f7e2.gif)
 
 ## Requirements
 
