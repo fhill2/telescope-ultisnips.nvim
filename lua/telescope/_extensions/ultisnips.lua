@@ -103,7 +103,6 @@ local ultisnips = function(opts)
             vim.api.nvim_put({selection.value.name}, '', true, true)
             vim.cmd([[call UltiSnips#ExpandSnippet()]])
 
-            vim.fn.feedkeys('i')
           end
         )
         return true
