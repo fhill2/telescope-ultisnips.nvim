@@ -28,5 +28,5 @@ require'telescope'.extensions.ultisnips.ultisnips{}
 or
 
 ```vim
-:Telescope ultisnips ultisnips
+:Telescope ultisnips
 ```
