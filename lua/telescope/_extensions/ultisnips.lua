@@ -24,10 +24,17 @@ local ultisnips = function(opts)
   local snippetsList = vim.g.current_ulti_dict_info
 
   for k, v in pairs(snippetsList) do
-    local filepath = string.gsub(v.location, ".snippets:%d*", ".snippets")
-    local filename = string.match(filepath, "([^\\/?%.]+)%.snippets$")
+    local filepath, filename, linenr
+    if v.location == "added" then
+      filename = "added"
+      filepath = nil
+      linenr = nil
+    else
+      filepath = string.gsub(v.location, ".snippets:%d*", ".snippets")
+      filename = string.match(filepath, "([^\\/?%.]+)%.snippets$")
+      _, _, linenr = string.find(v.location, ":(%d+)")
+    end
 
-    local _, _, linenr = string.find(v.location, ":(%d+)")
 
     table.insert(objs, {
       name = k,
@@ -84,6 +91,8 @@ local ultisnips = function(opts)
               end
 
               vim.api.nvim_buf_set_option(bufnr, "filetype", "snippets")
+            else
+              snippet = {'No preview available'}
             end -- if entry.value.filepath ~= nil
             vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, snippet)
           end,
